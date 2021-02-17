@@ -20,33 +20,39 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-expand-lg navbal-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbal-dark bg-dark">
         <!-- Expand Navbar if device screen is small -->
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar" 
-                <span class="nav-toggler-icon"></span>
-            </button>
-            <div class="collaps navbar-collapse" id="navbar">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" id="home" href="/home">Home</a>
-                    <a class="nav-item nav-link" id="sign-up" href="/sign-up">Sign-up</a>
-                    <a class="nav-item nav-link" id="login" href="/login">Login</a>
-                    <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
-            </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar"
+        >
+          <span class="nav-toggler-icon"></span>
+        </button>
+        <div class="collaps navbar-collapse" id="navbar">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" id="home" href="/home">Home</a>
+            <a class="nav-item nav-link" id="sign-up" href="/sign-up"
+              >Go ahead, sign up</a
+            >
+            <a class="nav-item nav-link" id="login" href="/login">Login</a>
+            <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+          </div>
         </div>
+      </nav>
 
-        </nav>
+      <div class="container">{% block content %}{%endblock%}</div>
 
-
-
-        <script
+      <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"
-        ></script>
-        <!--pull images from the static folder images file-->
-        <script type='text/javascript' src="{url_for('static',filename='images.js')}"
-    
-        
-    </body>
-    </html
+      ></script>
+      <!--pull images from the static folder images file-->
+      <script
+        type="text/javascript"
+        src="{url_for('static',filename='images.js')}"
+      />
+    </body></html
 ></DOCTYPE>
