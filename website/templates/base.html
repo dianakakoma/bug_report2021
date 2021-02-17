@@ -1,1 +1,52 @@
 <!-- Theme of the entire website - can be overridden with more specific templates -->
+<DOCTYPE html>
+  <html>
+    <title>{% block title %} Home Page {% endblock %}</title>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale = 1" />
+      <!-- Bootstrap CSS -->
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+        crossorigin="anonymous"
+      />
+      <!-- Bootstap Icons -->
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+      />
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbal-dark bg-dark">
+        <!-- Expand Navbar if device screen is small -->
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar" 
+                <span class="nav-toggler-icon"></span>
+            </button>
+            <div class="collaps navbar-collapse" id="navbar">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" id="home" href="/home">Home</a>
+                    <a class="nav-item nav-link" id="sign-up" href="/sign-up">Sign-up</a>
+                    <a class="nav-item nav-link" id="login" href="/login">Login</a>
+                    <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+            </div>
+        </div>
+
+        </nav>
+
+
+
+        <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"
+        ></script>
+        <!--pull images from the static folder images file-->
+        <script type='text/javascript' src="{url_for('static',filename='images.js')}"
+    
+        
+    </body>
+    </html
+></DOCTYPE>
