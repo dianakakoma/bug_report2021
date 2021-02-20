@@ -11,8 +11,20 @@ def home():
 
 @auth.route('/login', methods=["GET","POST"])
 def login():
-    data = request.form
-    print(data) #gives us the data submitted on th form
+    if request.method == "POST":
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        #query/search the database to confirm the the person trying to login has actually sign-up and return the first result
+        user = User.query.filter_by(email=email).first()
+        if user:
+            if check_password_hash(user.password, password):
+                flash("Logged in successfully!", category='success')
+                return redirect(url_for('views.home'))
+            else:
+                flash("Incorrect password, try again.", category="error")
+        else:
+            flash("The email entered does not exist in our records, try again.", category="error")
     return render_template("login.html", text="testing")
 
 @auth.route('/logout')
@@ -27,8 +39,12 @@ def sign_up():
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
 
+        user = User.query.filter_by(email=email).first()
+
+        if user:
+            flash("this user already exists", category="error")
         #form input restrictions
-        if len(email) < 10:
+        elif len(email) < 10:
             flash("email must be greater than 2 characters", category="error")
         elif len(firstName) < 2:
             flash("Your first name must be greater than 2 characters", category="error")
