@@ -22,10 +22,14 @@ def create_app():
     #import the User and Report Models
     from .models import User, Report
 
+    create_database(app)
+
     return app
 
-#check database has been created yet, if not create it. 
+#check if the database has already been created, if not create it. 
 def create_database(app):
     if not path.exists('website/' + DB_NAME):
-        db.create.all(app=app)
-        Print('Created Database!')
+        db.create_all(app=app)
+        print('Created Database!')
+    else:
+        print('Database already exists.')
