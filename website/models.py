@@ -5,10 +5,10 @@ from sqlalchemy.sql import func
 class Report(db.Model):
     id = db.Column(db.Integer, primary_key=True)
 
-    #user is reporting a great idea or a bug
+    #user fields for reporting a great idea or a bug
     bugOrIdea = db.Column(db.String(10))
     description = db.Column(db.String(300))
-    suggestFix = db.Column(db.String(300))
+    suggestFix = db.Column(db.String(1000))
     url = db.Column(db.String(150))
     screenshot = db.Column(db.String(150))
 
@@ -27,4 +27,4 @@ class User(db.Model, UserMixin):
     firstName = db.Column(db.String(150))
 
     #reports field allows every report to be associated with particular use so you can all the the reports of a user.
-    reports = db.relationship('Note')
+    reports = db.relationship('Report')
