@@ -1,9 +1,9 @@
-import . import db
+from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 
-class Report(db.model):
-    id = db.Column(db.Interger, primary_key=True)
+class Report(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
 
     #user is reporting a great idea or a bug
     bugOrIdea = db.Column(db.String(10))
